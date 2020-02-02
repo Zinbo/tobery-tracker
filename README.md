@@ -73,6 +73,9 @@ put in start location and end location, put in threshold in miles, e.g. 5 miles.
 ## Questions
 
 ## To do
-- [ ] Create Node application
-- [ ] Design Domain layer in Node application
-- [ ] 
+
+### Set Up
+- [x] Set up Azure account
+- [ ] Set up deploying to Azure
+- [x] Clean up Readmes
+

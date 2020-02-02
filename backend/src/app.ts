@@ -2,19 +2,16 @@ import express from "express";
 import compression from "compression";  // compresses requests
 import session from "express-session";
 import bodyParser from "body-parser";
-import lusca from "lusca";
 import mongo from "connect-mongo";
-import flash from "express-flash";
 import path from "path";
 import mongoose from "mongoose";
-import passport from "passport";
 import bluebird from "bluebird";
-import { MONGODB_URI, SESSION_SECRET } from "./util/secrets";
+import { MONGODB_URI, SESSION_SECRET, NATIVESCRIPT } from "./infrastructure/secrets";
 
 const MongoStore = mongo(session);
 
 // Controllers (route handlers)
-import * as homeController from "./controllers/home";
+import * as homeController from "./api/home";
 
 // Create Express server
 const app = express();
@@ -32,8 +29,6 @@ mongoose.connect(mongoUrl, { useNewUrlParser: true, useCreateIndex: true, useUni
 
 // Express configuration
 app.set("port", process.env.PORT || 3000);
-app.set("views", path.join(__dirname, "../views"));
-app.set("view engine", "pug");
 app.use(compression());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -46,29 +41,18 @@ app.use(session({
         autoReconnect: true
     })
 }));
-app.use(passport.initialize());
-app.use(passport.session());
-app.use(flash());
-app.use(lusca.xframe("SAMEORIGIN"));
-app.use(lusca.xssProtection(true));
-app.use((req, res, next) => {
-    res.locals.user = req.user;
-    next();
-});
-app.use((req, res, next) => {
-    // After successful login, redirect back to the intended page
-    if (!req.user &&
-    req.path !== "/login" &&
-    req.path !== "/signup" &&
-    !req.path.match(/^\/auth/) &&
-    !req.path.match(/\./)) {
-        req.session.returnTo = req.path;
-    } else if (req.user &&
-    req.path == "/account") {
-        req.session.returnTo = req.path;
-    }
-    next();
-});
+
+
+//If being hosted from azure (not native script) and production, then host the angular app too.
+if(process.env.NODE_ENV === 'production' && !NATIVESCRIPT) {
+    // Serve any static files
+    app.use(express.static(path.join(__dirname, '../../frontend/build')))
+  
+    // Handle angular routing, return all requests to angular app
+    app.get('*', function(req: any, res: any) {
+      res.sendFile(path.join(__dirname, '../../frontend/build', 'index.html'))
+    })
+  }
 
 
 /**

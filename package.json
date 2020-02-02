@@ -1,0 +1,21 @@
+{
+  "name": "tobery-tracker",
+  "version": "1.0.0",
+  "description": "Tracks toby carveries that we've been to",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install-all": "npm install && cd frontend && npm install && cd ../backend && npm install",
+    "build-prod": "npm run install-all && cd frontend && ng build --prod && ../backend && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zinbo/tobery-tracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zinbo/tobery-tracker/issues"
+  },
+  "homepage": "https://github.com/Zinbo/tobery-tracker#readme"
+}
