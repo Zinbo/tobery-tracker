@@ -44,20 +44,20 @@ app.use(session({
 
 
 //If being hosted from azure (not native script) and production, then host the angular app too.
-if(process.env.NODE_ENV === 'production' && !NATIVESCRIPT) {
+if(process.env.NODE_ENV === "production" && !NATIVESCRIPT) {
     // Serve any static files
-    app.use(express.static(path.join(__dirname, '../../frontend/build')))
+    app.use(express.static(path.join(__dirname, "../../frontend/build")));
   
     // Handle angular routing, return all requests to angular app
-    app.get('*', function(req: any, res: any) {
-      res.sendFile(path.join(__dirname, '../../frontend/build', 'index.html'))
-    })
+    app.get("*", function(req: any, res: any) {
+      res.sendFile(path.join(__dirname, "../../frontend/build", "index.html"));
+    });
   }
 
 
 /**
  * Primary app routes.
  */
-app.get("/", homeController.index);
+app.get("/home", homeController.index);
 
 export default app;

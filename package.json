@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "install-all": "npm install && cd frontend && npm install && cd ../backend && npm install",
-    "build-prod": "npm run install-all && cd frontend && ng build --prod && ../backend && npm run build"
+    "postinstall": "cd frontend && npm install && ng build --prod && cd ../backend && npm install && npm run build",
+    "start": "cd backend && npm run serve"
   },
   "repository": {
     "type": "git",
