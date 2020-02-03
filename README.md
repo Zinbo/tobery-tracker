@@ -76,6 +76,12 @@ put in start location and end location, put in threshold in miles, e.g. 5 miles.
 
 ### Set Up
 - [x] Set up Azure account
-- [ ] Set up deploying to Azure
+- [x] Set up deploying to GCP
 - [x] Clean up Readmes
+
+## How to deploy
+```
+gcloud app deploy
+```
+
 

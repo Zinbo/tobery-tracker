@@ -1,0 +1,9 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+handlers:
+- url: /
+  static_files: dist/tobery-tracker/index.html
+  upload: dist/tobery-tracker/index.html
+- url: /
+  static_dir: dist/tobery-tracker/

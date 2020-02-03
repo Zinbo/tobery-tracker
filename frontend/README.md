@@ -12,3 +12,12 @@
 - [ ] Design HTML for home page
 - [ ] Set up routes
 - [ ] Hook up to back end for stats
+
+## How to deploy
+```
+1. Go to storage bucket
+2. Upload dist folder
+3. Run gsutil rsync -r gs://tobery-tracker.appspot.com ./tobery-tracker-angular
+4. cd tobery-tracker-angular
+5. gcloud app deploy
+```
