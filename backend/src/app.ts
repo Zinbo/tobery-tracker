@@ -1,3 +1,4 @@
+import { RestaurantRepositoryImpl } from "./infrastructure/database/model/RestaurantRepository";
 import express from "express";
 import compression from "compression";  // compresses requests
 import session from "express-session";
@@ -7,6 +8,7 @@ import path from "path";
 import mongoose from "mongoose";
 import bluebird from "bluebird";
 import { MONGODB_URI, SESSION_SECRET, NATIVESCRIPT } from "./infrastructure/secrets";
+import restaurantController from "./api/restaurantController";
 
 const MongoStore = mongo(session);
 
@@ -43,13 +45,13 @@ app.use(session({
 }));
 
 
-//If being hosted from azure (not native script) and production, then host the angular app too.
-if(process.env.NODE_ENV === "production" && !NATIVESCRIPT) {
+// If being hosted from azure (not native script) and production, then host the angular app too.
+if (process.env.NODE_ENV === "production" && !NATIVESCRIPT) {
     // Serve any static files
     app.use(express.static(path.join(__dirname, "../../frontend/build")));
-  
+
     // Handle angular routing, return all requests to angular app
-    app.get("*", function(req: any, res: any) {
+    app.get("*", (req: any, res: any) => {
       res.sendFile(path.join(__dirname, "../../frontend/build", "index.html"));
     });
   }
@@ -59,5 +61,8 @@ if(process.env.NODE_ENV === "production" && !NATIVESCRIPT) {
  * Primary app routes.
  */
 app.get("/home", homeController.index);
+// TODO: this isn't right, should use some kind of dependency injection framework, like Invertify.
+app.use("/restaurants", restaurantController(new RestaurantRepositoryImpl()));
+
 
 export default app;

@@ -13,5 +13,8 @@
 - [x] Check out how to use winston logging
 
 ### Set up Data Layer
-- [ ] Set up domain classes
-- [ ] Set up CRUD functionality
+- [x] Set up domain classes
+- [x] Set up CRUD functionality
+
+### Misc
+- [ ] Set up dependency injection
