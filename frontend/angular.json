@@ -23,13 +23,13 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": false,
-            "assets": [ 
+            "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
-              "src/styles.sass"
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -128,5 +128,10 @@
       }
     }
   },
-  "defaultProject": "tobery-tracker"
+  "defaultProject": "tobery-tracker",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }

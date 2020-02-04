@@ -9,13 +9,16 @@ import { HomeComponent } from './home/home.component';
 // import {MatToolbarModule} from '@angular/material/toolbar';
 // import {MatIconModule} from '@angular/material/icon'
 
-import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule, MatGridListModule } from '@angular/material';
+import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule,
+  MatButtonModule, MatGridListModule, MatFormFieldModule, MatSelectModule, MatInputModule,
+  MatTooltipModule, MatSnackBarModule } from '@angular/material';
 import { AddVisitComponent } from './add-visit/add-visit.component';
 import { AllVisitsComponent } from './all-visits/all-visits.component';
 import { FindNewComponent } from './find-new/find-new.component';
 import { FindEnRouteComponent } from './find-en-route/find-en-route.component';
-
-
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,15 @@ import { FindEnRouteComponent } from './find-en-route/find-en-route.component';
     MatSidenavModule,
     MatListModule,
     MatButtonModule,
-    MatGridListModule
+    MatGridListModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FlexLayoutModule,
+    MatSelectModule,
+    MatTooltipModule,
+    MatSnackBarModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

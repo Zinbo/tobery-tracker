@@ -7,10 +7,14 @@
 - [x] Get any recommended VS Code extensions
 
 ### Set up Home Page
-- [ ] Set up Material UI colours properly
-- [ ] Design HTML for home page
-- [ ] Set up routes
-- [ ] Hook up to back end for stats
+- [x] Set up Material UI colours properly
+- [x] Design HTML for home page
+- [x] Set up routes
+
+### Set up Add visit page
+- [ ] Design page
+- [ ] Hook up to back end
+- [ ] Set up back end for save
 
 ## How to deploy
 ```

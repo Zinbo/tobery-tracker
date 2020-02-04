@@ -5,6 +5,7 @@ import { AddVisitComponent } from './add-visit/add-visit.component';
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 const routes: Routes = [
@@ -16,7 +17,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes), FlexLayoutModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
