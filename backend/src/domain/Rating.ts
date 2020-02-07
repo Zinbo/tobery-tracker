@@ -1,5 +1,5 @@
 export class Rating {
-    private readonly _value: number;
+    private readonly value: number;
 
     constructor(value: number) {
         if (value < 0 || value > 5) {
@@ -8,10 +8,10 @@ export class Rating {
         if (!Number.isInteger(value)) {
             throw new Error("Rating must be whole number");
         }
-        this._value = value;
+        this.value = value;
     }
 
-    get value() {
-        return this._value;
+    get Value() {
+        return this.value;
     }
 }

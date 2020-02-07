@@ -18,3 +18,7 @@
 
 ### Misc
 - [ ] Set up dependency injection
+- [ ] Set up validation in domain classes
+- [ ] Add interface for proxy
+- [ ] Add tests
+- [ ] Add error handling

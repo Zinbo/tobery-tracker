@@ -1,37 +1,44 @@
-import { Address } from "./Address";
+import Location from "./Location";
 import { Visit } from "./Visit";
 
 export class Restaurant {
-    private readonly _name: string;
-    private readonly _address: Address;
-    private _visit?: Visit;
+    private readonly id: string;
+    private readonly name: string;
+    private readonly location: Location;
+    private readonly tobyCarveryCode: number;
+    private visit?: Visit;
 
-    constructor(name: string, latitude: number, longitude: number) {
-        this._name = name;
-        this._address = new Address(latitude, longitude);
+    constructor(name: string, location: Location, tobyCarveryCode: number) {
+        this.name = name;
+        this.location = location;
+        this.tobyCarveryCode = tobyCarveryCode;
     }
 
-    get name(): string {
-        return this._name;
+    get Name(): string {
+        return this.name;
     }
 
-    get address(): Address {
-        return this._address;
+    get Location(): Location {
+        return this.location;
     }
 
-    get visit(): Visit {
-        return this._visit;
+    get Visit(): Visit {
+        return this.visit;
+    }
+
+    get TobyCaveryCode() {
+        return this.tobyCarveryCode;
     }
 
     initialiseVisit(time: Date,
                     review: string,
                     rating: number,
                     photos: Array<string>) {
-        if (this._visit !== null) { throw new Error("Visit can only be set once."); }
-        this._visit = new Visit(time, review, rating, photos);
+        if (this.visit !== null) { throw new Error("Visit can only be set once."); }
+        this.visit = new Visit(time, review, rating, photos);
     }
 
     removeVisit() {
-        this._visit = null;
+        this.visit = null;
     }
 }

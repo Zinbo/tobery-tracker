@@ -66,6 +66,6 @@ if (process.env.NODE_ENV === "production" && !NATIVESCRIPT) {
 const repository: RestaurantRepository = new RestaurantRepositoryImpl();
 // TODO: this isn't right, should use some kind of dependency injection framework, like Invertify.
 app.use("/restaurants", restaurantController(repository));
-
 app.use("/visits", visitController(repository));
+
 export default app;

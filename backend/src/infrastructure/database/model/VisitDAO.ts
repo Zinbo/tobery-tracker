@@ -12,10 +12,10 @@ export class VisitDAO extends Typegoose {
 
     static convertToModel(visit: Visit): VisitDAO {
         const model = new VisitDAO();
-        model.time = visit.time;
-        model.review = visit.review;
-        model.rating = visit.rating;
-        model.photos = visit.photos;
+        model.time = visit.Time;
+        model.review = visit.Review;
+        model.rating = visit.Rating;
+        model.photos = visit.Photos;
         return model;
     }
 }
