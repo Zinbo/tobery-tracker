@@ -1,6 +1,12 @@
 import { BackendService } from './../services/backend.service';
 import { VisitForm } from './visit-form';
 import { Component, OnInit } from '@angular/core';
+import RestaurantDTO from '../../../../shared/api/dto/RestaurantDTO';
+
+interface Restaurant {
+  id: string;
+  name: string;
+}
 
 @Component({
   selector: 'app-add-visit',
@@ -10,10 +16,18 @@ import { Component, OnInit } from '@angular/core';
 export class AddVisitComponent implements OnInit {
 
   rating = 0;
-  model: VisitForm = new VisitForm('Manchester', 3, 'okay');
+  model: VisitForm = new VisitForm(null, null, null);
   submitted = false;
+  restaurants: Array<Restaurant> = [];
+  ratings = [1, 2, 3, 4, 5];
 
-  constructor(private backendService: BackendService) { }
+  constructor(private backendService: BackendService) {
+    backendService.getRestaurants().subscribe((restaurantDtos: RestaurantDTO[]) => {
+      restaurantDtos.map(r => {
+        this.restaurants.push({name: r.name, id: r.id});
+      })
+    })
+   }
 
   get diagnostic() { return JSON.stringify(this.model); }
 

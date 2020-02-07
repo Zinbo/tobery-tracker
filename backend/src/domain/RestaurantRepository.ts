@@ -1,4 +1,4 @@
-import { Restaurant } from "./Restaurant";
+import { Restaurant } from "./Restaurant"
 
 export interface RestaurantRepository {
     save: (restaurant: Restaurant) => void;

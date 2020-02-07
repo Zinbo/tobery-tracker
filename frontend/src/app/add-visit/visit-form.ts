@@ -1,3 +1,3 @@
 export class VisitForm {
-  constructor(public location: string, public rating: number, public review: string) {}
+  constructor(public restaurant: string, public rating: string, public review: string) {}
 }

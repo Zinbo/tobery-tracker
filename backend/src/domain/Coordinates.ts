@@ -3,15 +3,15 @@ export default class Coordinates {
     private readonly longitude: number;
 
     constructor(latitude: number, longitude: number) {
-        this.latitude = latitude;
-        this.longitude = longitude;
+        this.latitude = latitude
+        this.longitude = longitude
     }
 
     get Latitude(): number {
-        return this.latitude;
+        return this.latitude
     }
 
     get Longitude(): number {
-        return this.longitude;
+        return this.longitude
     }
 }

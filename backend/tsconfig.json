@@ -14,7 +14,8 @@
       "paths": {
           "*": [
               "node_modules/*",
-              "src/types/*"
+              "../shared/api/dto/*",
+              "src/*"
           ]
       }
   },

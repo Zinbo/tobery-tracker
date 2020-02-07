@@ -12,9 +12,10 @@
 - [x] Set up routes
 
 ### Set up Add visit page
-- [ ] Design page
-- [ ] Hook up to back end
+- [x] Design page
+- [x] Hook up to back end
 - [ ] Set up back end for save
+- [ ] Set up required fields
 
 ## How to deploy
 ```

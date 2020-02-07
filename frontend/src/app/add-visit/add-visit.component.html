@@ -5,11 +5,9 @@
   {{diagnostic}}
 <p></p>
   <mat-form-field fxFlexFill>
-    <mat-label>Location</mat-label>
-    <mat-select [(ngModel)]="model.location" name="location">
-      <mat-option value="Manchester">Manchester</mat-option>
-      <mat-option value="London">London</mat-option>
-      <mat-option value="Cornwall">Cornwall</mat-option>
+    <mat-label>Restaurant</mat-label>
+    <mat-select [(ngModel)]="model.restaurant" name="restaurant">
+      <mat-option *ngFor="let restaurant of restaurants" value="{{restaurant.id}}">{{restaurant.name}}</mat-option>
     </mat-select>
   </mat-form-field>
   <mat-form-field fxFlexFill>
@@ -19,11 +17,7 @@
   <mat-form-field fxFlexFill >
     <mat-label>Rating</mat-label>
     <mat-select [(ngModel)]="model.rating" name="rating">
-      <mat-option value="1">1</mat-option>
-      <mat-option value="2">2</mat-option>
-      <mat-option value="3">3</mat-option>
-      <mat-option value="4">4</mat-option>
-      <mat-option value="5">5</mat-option>
+      <mat-option *ngFor="let rating of ratings" value="{{rating}}">{{rating}}</mat-option>
     </mat-select>
   </mat-form-field>
   <button mat-button type="submit">Submit</button>

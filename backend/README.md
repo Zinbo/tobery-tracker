@@ -22,3 +22,5 @@
 - [ ] Add interface for proxy
 - [ ] Add tests
 - [ ] Add error handling
+- [ ] Set up null checks
+
