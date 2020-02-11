@@ -1,6 +1,6 @@
 import { RestaurantRepository } from "./../../domain/RestaurantRepository"
 import { Restaurant } from "./../../domain/Restaurant"
-import { RestaurantRepositoryImpl } from "./../database/model/RestaurantRepository"
+import { RestaurantRepositoryImpl } from "../database/model/RestaurantRepositoryImpl"
 import TobyCarveryProxy from "../proxy/tobyCarveryProxy"
 import CarveryDTO from "../proxy/CarveryDTO"
 import DTOToDomainTransformer from "../transformers/DTOToDomainTransformer"

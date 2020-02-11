@@ -1,22 +1,28 @@
-<form #viewForm="ngForm" (ngSubmit)="onSubmit()" class="example-form" fxFlexFill>
+<form #viewForm="ngForm" (ngSubmit)="onSubmit(viewForm)" class="example-form" fxFlexFill>
   <div>
     <h1>Add Visit</h1>
   </div>
   {{diagnostic}}
 <p></p>
   <mat-form-field fxFlexFill>
+    <mat-label>Date of Visit</mat-label>
+    <input matInput [matDatepicker]="myDatepicker" [(ngModel)]="model.date" name="date" required>
+    <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+    <mat-datepicker #myDatepicker></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field fxFlexFill>
     <mat-label>Restaurant</mat-label>
-    <mat-select [(ngModel)]="model.restaurant" name="restaurant">
+    <mat-select [(ngModel)]="model.restaurant" name="restaurant" required>
       <mat-option *ngFor="let restaurant of restaurants" value="{{restaurant.id}}">{{restaurant.name}}</mat-option>
     </mat-select>
   </mat-form-field>
   <mat-form-field fxFlexFill>
     <mat-label>Review</mat-label>
-    <textarea matInput [(ngModel)]="model.review" placeholder="Vegetables not stirred enough." name="review"></textarea>
+    <textarea matInput [(ngModel)]="model.review" placeholder="Vegetables not stirred enough." name="review" required></textarea>
   </mat-form-field>
   <mat-form-field fxFlexFill >
     <mat-label>Rating</mat-label>
-    <mat-select [(ngModel)]="model.rating" name="rating">
+    <mat-select [(ngModel)]="model.rating" name="rating" required>
       <mat-option *ngFor="let rating of ratings" value="{{rating}}">{{rating}}</mat-option>
     </mat-select>
   </mat-form-field>

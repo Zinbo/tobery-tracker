@@ -1,5 +1,6 @@
 export default class VisitDTO {
-    restaurant: string
+    restaurantId: string
+    
     rating: number
     review: string
 }

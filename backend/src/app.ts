@@ -1,5 +1,5 @@
 import { RestaurantRepository } from "./domain/RestaurantRepository"
-import { RestaurantRepositoryImpl } from "./infrastructure/database/model/RestaurantRepository"
+import { RestaurantRepositoryImpl } from "./infrastructure/database/model/RestaurantRepositoryImpl"
 import express from "express"
 import compression from "compression"  // compresses requests
 import session from "express-session"
