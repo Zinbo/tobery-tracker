@@ -2,6 +2,10 @@
 
 ## To do
 
+## To install
+- Download MongoDB
+- Install with custom setup
+
 ### Set Up
 - [x] Create Node application
 - [x] Set up package structure

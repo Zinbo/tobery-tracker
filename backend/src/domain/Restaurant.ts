@@ -45,7 +45,7 @@ export class Restaurant {
                     review: string,
                     rating: number,
                     photos: Array<string>) {
-        if (this.visit !== null) { throw new Error("Visit can only be set once.") }
+        if (this.visit) { throw new Error("Visit can only be set once.") }
         this.visit = new Visit(time, review, rating, photos)
     }
 

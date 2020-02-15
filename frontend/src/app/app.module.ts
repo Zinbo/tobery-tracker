@@ -11,7 +11,7 @@ import { HomeComponent } from './home/home.component';
 
 import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule,
   MatButtonModule, MatGridListModule, MatFormFieldModule, MatSelectModule, MatInputModule,
-  MatTooltipModule, MatSnackBarModule, MatDatepickerModule, MatNativeDateModule } from '@angular/material';
+  MatTooltipModule, MatSnackBarModule, MatDatepickerModule, MatNativeDateModule, MatSnackBar } from '@angular/material';
 import { AddVisitComponent } from './add-visit/add-visit.component';
 import { AllVisitsComponent } from './all-visits/all-visits.component';
 import { FindNewComponent } from './find-new/find-new.component';
@@ -48,7 +48,8 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     HttpClientModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

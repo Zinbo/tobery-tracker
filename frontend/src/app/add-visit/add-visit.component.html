@@ -1,6 +1,6 @@
 <form #viewForm="ngForm" (ngSubmit)="onSubmit(viewForm)" class="example-form" fxFlexFill>
   <div>
-    <h1>Add Visit</h1>
+    <h1 class="mat-h1">Add Visit</h1>
   </div>
   {{diagnostic}}
 <p></p>
@@ -12,7 +12,7 @@
   </mat-form-field>
   <mat-form-field fxFlexFill>
     <mat-label>Restaurant</mat-label>
-    <mat-select [(ngModel)]="model.restaurant" name="restaurant" required>
+    <mat-select [(ngModel)]="model.restaurantId" name="restaurant" required>
       <mat-option *ngFor="let restaurant of restaurants" value="{{restaurant.id}}">{{restaurant.name}}</mat-option>
     </mat-select>
   </mat-form-field>

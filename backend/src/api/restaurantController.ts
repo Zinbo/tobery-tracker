@@ -10,9 +10,18 @@ import { Restaurant } from "domain/Restaurant"
 export default function restaurantController(repository: RestaurantRepository): Router {
     const router = express.Router()
 
+    const getShowVisitedParam = (req: Request): boolean => {
+        const showVisited = req.query.showVisited
+        if(showVisited !== undefined) {
+            if(showVisited == "false") return false
+            return true
+        }
+        return true
+    }
+
     router.get("/", async (req: Request, res: Response) => {
-        const showVisited = getShowVisitedParam(req);
-        let restaurants: Restaurant[];
+        const showVisited = getShowVisitedParam(req)
+        let restaurants: Restaurant[]
         if(showVisited) {
             console.log("Getting all restaurants...")
             restaurants = await repository.getAllRestaurants()
@@ -30,15 +39,6 @@ export default function restaurantController(repository: RestaurantRepository): 
         ScheduleService.getAndSaveCarveries()
         return res.send()
     })
-
-    const getShowVisitedParam = (req: Request): boolean => {
-        let showVisited = req.query.showVisited;
-        if(showVisited !== undefined) {
-            if(showVisited == 'false') return false
-            return true;
-        }
-        return true;
-    }
 
     return router
 }

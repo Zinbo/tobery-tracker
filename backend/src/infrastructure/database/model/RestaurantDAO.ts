@@ -29,7 +29,7 @@ export class RestaurantDAO extends Typegoose {
     static convertToEntity(dao: RestaurantDAO): Restaurant {
         const restaurant = new Restaurant(dao.name, LocationDAO.convertToEntity(dao.location), dao.tobyCaveryCode)
         restaurant.Id = dao._id
-        if(restaurant.Visit) restaurant.initialiseVisit(dao.visit.time, dao.visit.review, dao.visit.rating, dao.visit.photos)
+        if(dao.visit) restaurant.initialiseVisit(dao.visit.time, dao.visit.review, dao.visit.rating, dao.visit.photos)
         return restaurant
     }
 }
