@@ -1,12 +1,11 @@
-import { BackendService } from './../services/backend.service';
 import { VisitForm } from './visit-form';
 import { Component, OnInit } from '@angular/core';
-import RestaurantDTO from '../../../../shared/api/dto/RestaurantDTO';
 import { NgForm } from '@angular/forms';
-import { format } from 'url';
+import { BackendService } from './../services/backend.service';
 import { MatSnackBar } from '@angular/material';
-import VisitDTO from '../../../../shared/api/dto/VisitDTO';
 import { Router } from '@angular/router';
+import RestaurantDTO from '../services/RestaurantDTO';
+import VisitDTO from '../services/VisitDTO';
 
 interface Restaurant {
   id: string;

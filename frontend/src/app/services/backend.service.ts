@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import RestaurantDTO from '../../../../shared/api/dto/RestaurantDTO';
-import VisitDTO from '../../../../shared/api/dto/VisitDTO';
+import VisitDTO from './VisitDTO';
+import RestaurantDTO from './RestaurantDTO';
 
 @Injectable({
   providedIn: 'root'
@@ -21,5 +21,5 @@ export class BackendService {
 
   getUnvisitedRestaurants(): Observable<RestaurantDTO[]> {
     return this.http.get<RestaurantDTO[]>('http://localhost:3000/restaurants?showVisited=false');
-}
+  }
 }

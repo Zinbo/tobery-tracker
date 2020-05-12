@@ -1,5 +1,5 @@
 import { Restaurant } from "./../domain/Restaurant"
-import RestaurantDTO from "../../../shared/api/dto/RestaurantDTO"
+import RestaurantDTO from "./RestaurantDTO"
 export default class DomainToDTOTranslator {
     
     static convertFromDomainToDTO(restaurant: Restaurant): RestaurantDTO {
