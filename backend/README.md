@@ -28,3 +28,9 @@
 - [ ] Add error handling
 - [ ] Set up null checks
 
+
+## In new Environment
+Right now, you have to manually retrieve restaurant data when deployed to a new environment, do:
+```
+GET https://nodebackend-dot-tobery-tracker.appspot.com/restaurants/refresh-from-source
+```

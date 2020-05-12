@@ -1,22 +1,20 @@
+<div align="center">
+    <img src="logo.png" alt="Logo" width='200px' height='200px'/>
+</div>
+
 # Tobery Tracker
-
-## Why?
-Track all toby carvery's we've been to
-
-## How?
+Track all the toby carvery's we've been to.
 
 ## Technology Used
-- Cloud provider(?)
 - Angular
-- NativeScript
 - TypeScript
-- MicroInteractions (animations)?
 - Google Maps
-- Selenium (Scrappy?)
 - Sass
 - Material UI
 - Node
-- Mongo or Redis?
+- Mongo
+- mlab
+- GCP
 
 ## Design
 
@@ -72,16 +70,33 @@ put in start location and end location, put in threshold in miles, e.g. 5 miles.
 
 ## Questions
 
-## To do
-
-### Set Up
-- [x] Set up Azure account
-- [x] Set up deploying to GCP
-- [x] Clean up Readmes
-
-## How to deploy
+## How to start the application locally
+### Node Backend
 ```
+cd backend
+npm start
+```
+
+### Angular Frontend
+```
+cd frontend
+npm start
+```
+
+## How to deploy the application
+
+### Node Backend
+```
+cd backend
 gcloud app deploy
+Visit https://nodebackend-dot-tobery-tracker.appspot.com/restaurants
+```
+
+## Angular Frontend
+```
+cd frontend
+gcloud app deploy
+Visit 
 ```
 
 
