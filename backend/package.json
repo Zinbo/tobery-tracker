@@ -39,7 +39,7 @@
         "express-validator": "^6.2.0",
         "guid-typescript": "^1.0.9",
         "lodash": "^4.17.15",
-        "mongoose": "^5.7.1",
+        "mongoose": "^5.7.5",
         "nan": "^2.13.2",
         "prelude-ts": "^0.8.3",
         "request": "^2.88.0",
