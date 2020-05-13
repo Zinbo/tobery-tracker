@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="logo.png" alt="Logo" width='200px' height='200px'/>
+    <img src="logo.png" alt="Logo"/>
 </div>
 
 # Tobery Tracker
