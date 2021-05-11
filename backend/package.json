@@ -38,7 +38,7 @@
         "express-session": "^1.16.2",
         "express-validator": "^6.2.0",
         "guid-typescript": "^1.0.9",
-        "lodash": "^4.17.15",
+        "lodash": "^4.17.21",
         "mongoose": "^5.7.1",
         "nan": "^2.13.2",
         "prelude-ts": "^0.8.3",
